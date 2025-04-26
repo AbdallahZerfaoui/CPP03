@@ -2,75 +2,108 @@
 #include <iostream>
 
 // Default constructor
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap():
+	name("Default"),
+	hitPoints(10),
+	energyPoints(10),
+	attackDamage(0)
 {
-	// std::cout << "ClapTrap default constructor called" << std::endl;
-	// Initialize member variables here (e.g., this->_name = "Default Name";)
+	std::cout << "ClapTrap default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string newName):
+	name(newName),
+	hitPoints(10),
+	energyPoints(10),
+	attackDamage(0)
+{
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 // Copy constructor
-ClapTrap::ClapTrap(const ClapTrap& other)
+ClapTrap::ClapTrap(const ClapTrap& other):
+	name(other.name),
+	hitPoints(other.hitPoints),
+	energyPoints(other.energyPoints),
+	attackDamage(other.attackDamage)
 {
-	// std::cout << "ClapTrap copy constructor called" << std::endl;
-	// Copy member variables from 'other'.
-	// Often done by calling the copy assignment operator:
-    *this = other;
-    // Alternatively, copy them directly here:
-    // 
-	// Copy member variables
-		hitPoints = other.hitPoints;
-		energyPoints = other.energyPoints;
-		attackDamage = other.attackDamage;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 // Copy assignment operator
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
-	// std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		// Clean up existing resources if necessary
-
-        
-	// Copy member variables
 		this->hitPoints = other.hitPoints;
 		this->energyPoints = other.energyPoints;
 		this->attackDamage = other.attackDamage;
-		// Assign member variables from 'other' (assigned above or add more manually)
 	}
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	return *this;
 }
 
 // Destructor
 ClapTrap::~ClapTrap()
 {
-	// std::cout << "ClapTrap destructor called" << std::endl;
-	// Clean up resources if necessary
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 // attack method
 void ClapTrap::attack(const std::string& target)
 {
-	// Method implementation here
+	if (hitPoints > 0 && energyPoints > 0)
+	{
+		energyPoints--;
+		std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+	}
+	else if (hitPoints <= 0)
+	{
+		std::cout << "ClapTrap " << name << " is out of hit points and cannot attack!" << std::endl;
+	}
+	else
+	{
+		std::cout << "ClapTrap " << name << " is out of energy points and cannot attack!" << std::endl;
+	}
 }
 
 // takeDamage method
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	// Method implementation here
+	if (hitPoints > 0)
+	{
+		if (hitPoints >= (int)amount)
+		{
+			hitPoints -= amount;
+			std::cout << "ClapTrap " << name << " takes " << amount << " damage, and has " << hitPoints << " left!" << std::endl;
+		}
+		else
+		{
+			hitPoints = 0; // Ensure hitPoints do not go negative
+			std::cout << "ClapTrap " << name << " takes " << amount << " damage, and has 0 hit points left!" << std::endl;
+		}
+	}
+	else
+	{
+		std::cout << "Pray for your brother " << name << ", he is already out of hit points!" << std::endl;
+	}
 }
 
 // beRepaired method
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	// Method implementation here
+	if (hitPoints > 0 && energyPoints > 0)
+	{
+		energyPoints--;
+		hitPoints += amount;
+		std::cout << "ClapTrap " << name << " is repaired by " << amount << ", and has " << hitPoints << " hit points left!" << std::endl;
+	}
+	else if (hitPoints <= 0)
+	{
+		std::cout << "ClapTrap " << name << " is out of hit points and cannot be repaired!" << std::endl;
+	}
+	else
+	{
+		std::cout << "ClapTrap " << name << " is out of energy points and cannot be repaired!" << std::endl;
+	}
 }
-
-// Add other member function definitions here (declared above or add more manually)
-
-// Optional: Overload stream insertion operator definition
-// std::ostream& operator<<(std::ostream& os, const ClapTrap& obj)
-// {
-//     // Output object state to stream
-//     return os;
-// }
