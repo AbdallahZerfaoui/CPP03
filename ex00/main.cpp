@@ -6,17 +6,18 @@
 /*   By: azerfaou <azerfaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 00:11:36 by azerfaou          #+#    #+#             */
-/*   Updated: 2025/04/27 00:11:37 by azerfaou         ###   ########.fr       */
+/*   Updated: 2025/05/24 14:26:44 by azerfaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "include/ClapTrap.hpp"
+#include "include/colors.hpp"
 
-int main() 
+int main()
 {
 	// Test Case 1: Basic functionality
-	std::cout << GREEN <<"--- Test Case 1: Basic Actions ---" << RESET << std::endl;
+	std::cout << CYAN <<"--- Test Case 1: Basic Actions ---" << RESET << std::endl;
 	ClapTrap player1("HeroBot");
 	player1.attack("Enemy1"); // Should print attack message, cost 1 energy (0 damage initially)
 	player1.takeDamage(3);    // Should print damage message, reduce HP
@@ -26,7 +27,7 @@ int main()
 	std::cout << std::endl;
 
 	// Test Case 2: Running out of Energy
-	std::cout << GREEN << "--- Test Case 2: Running out of Energy ---" << RESET << std::endl;
+	std::cout << CYAN << "--- Test Case 2: Running out of Energy ---" << RESET << std::endl;
 	ClapTrap energyBot("EnergyBot");
 	// Drain energy (10 energy points initially)
 	for (int i = 0; i < 11; ++i) {
@@ -37,7 +38,7 @@ int main()
 	std::cout << std::endl;
 
 	// Test Case 3: Taking Fatal Damage and actions when dead
-	std::cout << GREEN << "--- Test Case 3: Taking Fatal Damage ---" << RESET << std::endl;
+	std::cout << CYAN << "--- Test Case 3: Taking Fatal Damage ---" << RESET << std::endl;
 	ClapTrap fragileBot("FragileBot");
 	fragileBot.takeDamage(5); // Takes 5 damage
 	fragileBot.takeDamage(5); // Takes another 5 damage, should result in 0 HP and death message
@@ -48,7 +49,7 @@ int main()
 	std::cout << std::endl;
 
 	// Test Case 4: Large repair amount
-	std::cout << GREEN << "--- Test Case 4: Large Repair ---" << RESET << std::endl;
+	std::cout << CYAN << "--- Test Case 4: Large Repair ---" << RESET << std::endl;
 	ClapTrap repairBot("RepairBot");
 	repairBot.takeDamage(8); // Take significant damage but survive
 	repairBot.beRepaired(20); // Repair large amount (no max HP constraint specified)
@@ -56,7 +57,7 @@ int main()
 	std::cout << std::endl;
 
 	// Destructors will be called automatically as objects go out of scope
-	std::cout << GREEN << "--- End of main, destructors called ---" << RESET << std::endl;
+	std::cout << CYAN << "--- End of main, destructors called ---" << RESET << std::endl;
 
 	return 0;
 }
