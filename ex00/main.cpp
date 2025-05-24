@@ -6,7 +6,7 @@
 /*   By: azerfaou <azerfaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 00:11:36 by azerfaou          #+#    #+#             */
-/*   Updated: 2025/05/24 14:26:44 by azerfaou         ###   ########.fr       */
+/*   Updated: 2025/05/24 16:05:12 by azerfaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 #include "include/ClapTrap.hpp"
 #include "include/colors.hpp"
 
+
+/**
+ * @brief Main function to test ClapTrap class functionality.
+ * 
+ * It tests the following scenarios:
+ * 1. Basic actions: attack, take damage, and repair.
+ * 2. Running out of energy points: attempts to attack and repair when energy is depleted.
+ * 3. Taking fatal damage: checks behavior when HP reaches zero.
+ * 4. Large repair amount: tests repairing with a large value.
+ *
+ * @return int Exit status of the program.
+ */
 int main()
 {
 	// Test Case 1: Basic functionality
@@ -26,7 +38,7 @@ int main()
 
 	std::cout << std::endl;
 
-	// Test Case 2: Running out of Energy
+	// Test Case 2: Running out of Energy - Drain energy points
 	std::cout << CYAN << "--- Test Case 2: Running out of Energy ---" << RESET << std::endl;
 	ClapTrap energyBot("EnergyBot");
 	// Drain energy (10 energy points initially)
