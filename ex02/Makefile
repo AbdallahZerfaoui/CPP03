@@ -26,7 +26,7 @@ endif
 # =============================================================================
 
 # Compiler
-CXX = g++
+CXX = c++
 RM = rm -f
 
 # Compiler flags:
@@ -78,6 +78,7 @@ re: art fclean $(TARGET)
 run: re
 	@echo "${GREEN}Running $(TARGET)...${RESET}"
 	./$(TARGET)
+	$(MAKE) fclean
 
 art:
 	@echo "        CCCCCCCCCCCCCPPPPPPPPPPPPPPPPP   PPPPPPPPPPPPPPPPP        000000000      333333333333333   "

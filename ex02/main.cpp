@@ -6,19 +6,19 @@
 /*   By: azerfaou <azerfaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:25:37 by azerfaou          #+#    #+#             */
-/*   Updated: 2025/04/30 14:02:16 by azerfaou         ###   ########.fr       */
+/*   Updated: 2025/05/24 14:31:31 by azerfaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ClapTrap.hpp"
 #include "include/FragTrap.hpp"
+#include "include/colors.hpp"
 #include <iostream>
 #include <string>
 
 // Helper function to print a section header for clarity
 void printSectionHeader(const std::string& title) 
 {
-    std::cout << std::endl << GREEN << "--- " << title << " ---" <<RESET<< std::endl;
+    std::cout << std::endl << CYAN << "--- " << title << " ---" <<RESET<< std::endl;
 }
 
 int main() 
