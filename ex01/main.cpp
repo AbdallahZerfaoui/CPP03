@@ -6,18 +6,19 @@
 /*   By: azerfaou <azerfaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 00:11:56 by azerfaou          #+#    #+#             */
-/*   Updated: 2025/04/27 00:11:57 by azerfaou         ###   ########.fr       */
+/*   Updated: 2025/05/24 14:30:18 by azerfaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "include/ClapTrap.hpp"
 #include "include/ScavTrap.hpp"
+#include "include/colors.hpp"
 
 
 int main() 
 {
-	std::cout <<GREEN<< "--- Creating ClapTrap and ScavTrap Objects ---" <<RESET<< std::endl;
+	std::cout <<CYAN<< "--- Creating ClapTrap and ScavTrap Objects ---" <<RESET<< std::endl;
 
 	// Test Construction Chaining:
 	// ClapTrap constructor should be called first, then ScavTrap constructor.
@@ -25,7 +26,7 @@ int main()
 	std::cout << std::endl;
 	ScavTrap scavTrap1("GatekeeperUnit"); // The main object to test
 
-	std::cout <<GREEN<< "\n--- Testing Basic ScavTrap Actions (Should use ScavTrap stats/messages) ---" <<RESET<< std::endl;
+	std::cout <<CYAN<< "\n--- Testing Basic ScavTrap Actions (Should use ScavTrap stats/messages) ---" <<RESET<< std::endl;
 
 	// Test overridden attack
 	scavTrap1.attack("Invader"); // Should use ScavTrap attack message and 20 damage
@@ -36,12 +37,12 @@ int main()
 	// Test inherited beRepaired (should use ClapTrap message)
 	scavTrap1.beRepaired(10); // Repairs 10 HP, costs 1 energy
 
-	std::cout <<GREEN<< "\n--- Testing ScavTrap Special Ability ---" <<RESET<< std::endl;
+	std::cout <<CYAN<< "\n--- Testing ScavTrap Special Ability ---" <<RESET<< std::endl;
 
 	// Test the new guardGate ability
 	scavTrap1.guardGate(); // Should print Gatekeeper message
 
-	std::cout <<GREEN<< "\n--- Testing ScavTrap Energy and HP Logic (with ScavTrap stats) ---" <<RESET<< std::endl;
+	std::cout <<CYAN<< "\n--- Testing ScavTrap Energy and HP Logic (with ScavTrap stats) ---" <<RESET<< std::endl;
 
 	// Test draining energy (ScavTrap has 50 energy)
 	std::cout << "Draining energy..." << std::endl;
@@ -62,7 +63,7 @@ int main()
 	scavTrap1.beRepaired(10); // Should fail: 0 HP
 	scavTrap1.guardGate();   // Test if death prevents guardGate (depends on implementation, prompt doesn't specify, but a robust implementation might check HP)
 
-	std::cout <<GREEN<< "\n--- End of main, objects going out of scope ---" <<RESET<< std::endl;
+	std::cout <<CYAN<< "\n--- End of main, objects going out of scope ---" <<RESET<< std::endl;
 
 	// Test Destruction Chaining:
 	// scavTrap1 destructor should be called first, then its base (ClapTrap) destructor.

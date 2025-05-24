@@ -1,14 +1,8 @@
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include <iostream>
 # include <string>
 # include "ClapTrap.hpp"
-
-// Colors
-# define RED "\033[31m"
-# define GREEN "\033[32m"
-# define RESET "\033[0m"
 
 class ScavTrap : public ClapTrap
 {
@@ -23,7 +17,7 @@ class ScavTrap : public ClapTrap
 	private:
 };
 
-// Optional: Overload stream insertion operator (common 42 practice)
+// Optional: Overload stream insertion operator
 // std::ostream& operator<<(std::ostream& os, const ClapTrap& obj);
 
 #endif
