@@ -2,3 +2,5 @@
 */scripts/
 */tasks.json
 test*
+*.txt
+*.o

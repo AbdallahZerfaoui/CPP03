@@ -6,7 +6,7 @@
 /*   By: azerfaou <azerfaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 00:11:52 by azerfaou          #+#    #+#             */
-/*   Updated: 2025/05/24 14:59:22 by azerfaou         ###   ########.fr       */
+/*   Updated: 2025/05/30 19:15:57 by azerfaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
 	if (this != &other)
 	{
-		ClapTrap::operator=(other);
+		// ClapTrap::operator=(other);
+		_name = other._name;
 		_hitPoints = other._hitPoints;
 		_energyPoints = other._energyPoints;
 		_attackDamage = other._attackDamage;
