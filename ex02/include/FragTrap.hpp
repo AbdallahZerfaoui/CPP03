@@ -12,6 +12,7 @@ class FragTrap : public ClapTrap
 		FragTrap(const FragTrap& other);             // Copy constructor
 		FragTrap& operator=(const FragTrap& other); // Copy assignment operator
 		~FragTrap();                               // Destructor
+		// Member functions
 		void attack(const std::string& target);
 		void highFivesGuys(void);                 // New ability
 	private:
