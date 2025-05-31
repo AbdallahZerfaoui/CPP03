@@ -6,7 +6,7 @@
 /*   By: azerfaou <azerfaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 00:11:47 by azerfaou          #+#    #+#             */
-/*   Updated: 2025/05/30 19:16:23 by azerfaou         ###   ########.fr       */
+/*   Updated: 2025/05/31 12:41:25 by azerfaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,11 @@ void ClapTrap::attack(const std::string& target)
 	}
 	else if (_hitPoints <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " is out of hit points and cannot attack!" << std::endl;
+		std::cout <<RED<< "ClapTrap " << _name << " is out of hit points and cannot attack!" <<RESET<< std::endl;
 	}
 	else
 	{
-		std::cout << "ClapTrap " << _name << " is out of energy points and cannot attack!" << std::endl;
+		std::cout <<RED<< "ClapTrap " << _name << " is out of energy points and cannot attack!" <<RESET<< std::endl;
 	}
 }
 
@@ -98,7 +98,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 	{
-		std::cout << "Pray for your brother " << _name << ", he is already out of hit points!" << std::endl;
+		std::cout <<RED<< "Pray for your brother " << _name << ", he is already out of hit points!" <<RESET<< std::endl;
 	}
 }
 

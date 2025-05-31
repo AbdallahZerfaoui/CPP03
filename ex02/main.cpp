@@ -6,7 +6,7 @@
 /*   By: azerfaou <azerfaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:25:37 by azerfaou          #+#    #+#             */
-/*   Updated: 2025/05/24 14:31:31 by azerfaou         ###   ########.fr       */
+/*   Updated: 2025/05/31 12:34:19 by azerfaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ int main()
     // Test Case 2: Initial Attributes and Core Functionality
     printSectionHeader("Testing FragTrap Initial Attributes and Core Methods");
     FragTrap robo("Robo-Frag");
-    std::cout << "\n'Robo-Frag' FragTrap created (HP=100, EP=100, AD=30)." << std::endl;
+    std::cout <<GREEN<< "\n'Robo-Frag' FragTrap created (HP=100, EP=100, AD=30)."<<RESET<< std::endl;
 
     // Test Attack method (should use 30 AD and consume 1 EP per attack)
     printSectionHeader("Testing Attack");
     robo.attack("an enemy scout");
     robo.attack("another scout");
     // Attack until energy is low/depleted
-    for (int i = 0; i < 98; i+=5) { // Attack 98 more times to drain energy (100 - 2 = 98)
-         robo.attack("random target " + std::to_string(i + 3));
+    for (int i = 0; i < 98; i++) { // Attack 98 more times to drain energy (100 - 2 = 98)
+         robo.attack("random target " + std::to_string(i + 1));
     }
-    std::cout << "Robo-Frag's energy should now be 0." << std::endl;
+    std::cout <<GREEN<< "Robo-Frag's energy should now be 0." <<RESET<< std::endl;
     robo.attack("a target when out of energy"); // Should fail due to lack of energy
 
     // Test TakeDamage method
@@ -69,7 +69,7 @@ int main()
     // Test BeRepaired method
     printSectionHeader("Testing Be Repaired");
     FragTrap medic("Medi-Frag");
-    std::cout << "\n'Medi-Frag' FragTrap created (HP=100, EP=100)." << std::endl;
+    std::cout <<GREEN<< "\n'Medi-Frag' FragTrap created (HP=100, EP=100)." <<RESET<< std::endl;
     medic.takeDamage(70); // Damage first: HP 100 -> 30, Energy 100
     medic.beRepaired(10); // HP 30 -> 40, Energy 100 -> 99
     medic.beRepaired(30); // HP 40 -> 70, Energy 99 -> 98
@@ -77,7 +77,7 @@ int main()
      for (int i = 0; i < 98; ++i) { // Repair 98 more times to drain energy (98 - 1 - 1 = 96 repairs, needs 98 total)
         medic.beRepaired(1);
      }
-    std::cout << "Medi-Frag's energy should now be 0, HP should be maxed out if it repaired enough." << std::endl;
+    std::cout <<GREEN<< "Medi-Frag's energy should now be 0, HP should be maxed out if it repaired enough." <<RESET<< std::endl;
     medic.beRepaired(10); // Should fail due to lack of energy
 
     // Test Actions When Dead
@@ -107,7 +107,7 @@ int main()
     frag1.highFivesGuys();
     frag2.beRepaired(10);
 
-    std::cout << "\nBoth FragOne and FragTwo should exist and function independently." << std::endl;
+    std::cout <<GREEN<< "\nBoth FragOne and FragTwo should exist and function independently." <<RESET<< std::endl;
 
     printSectionHeader("All FragTrap Tests Completed");
 

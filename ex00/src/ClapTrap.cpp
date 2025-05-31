@@ -6,7 +6,7 @@
 /*   By: azerfaou <azerfaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 00:11:27 by azerfaou          #+#    #+#             */
-/*   Updated: 2025/05/30 19:13:53 by azerfaou         ###   ########.fr       */
+/*   Updated: 2025/05/31 12:37:44 by azerfaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,14 +110,14 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		_energyPoints--;
 		_hitPoints += amount;
-		std::cout << "ClapTrap " << _name << " is repaired by " << amount << ", and has " << _hitPoints << " hit points left!" << std::endl;
+		std::cout <<GREEN<< "ClapTrap " << _name << " is repaired by " << amount << ", and has " << _hitPoints << " hit points left!" <<RESET<< std::endl;
 	}
 	else if (_hitPoints <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " is out of hit points and cannot be repaired!" << std::endl;
+		std::cout <<RED<< "ClapTrap " << _name << " is out of hit points and cannot be repaired!" <<RESET<< std::endl;
 	}
 	else if (_energyPoints <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " is out of energy points and cannot be repaired!" << std::endl;
+		std::cout <<RED<< "ClapTrap " << _name << " is out of energy points and cannot be repaired!" <<RESET<< std::endl;
 	}
 }
