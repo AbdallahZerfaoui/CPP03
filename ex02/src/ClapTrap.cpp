@@ -6,11 +6,12 @@
 /*   By: azerfaou <azerfaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 00:11:47 by azerfaou          #+#    #+#             */
-/*   Updated: 2025/05/31 12:41:25 by azerfaou         ###   ########.fr       */
+/*   Updated: 2025/05/31 13:27:31 by azerfaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ClapTrap.hpp"
+#include "../include/colors.hpp"
 #include <iostream>
 
 // Default constructor
